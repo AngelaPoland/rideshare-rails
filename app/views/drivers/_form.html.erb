@@ -1,0 +1,22 @@
+<h2><%= page_title %></h2>
+
+<main class="form">
+  <%= form_for @driver do |f| %>
+
+  <div class="form-fields">
+    <%= f.label "Name: "   %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form-fields">
+    <%= f.label "Vin: " %>
+    <%= f.text_field :vin %>
+  </div>
+</br>
+
+ <%= button_tag 'Clear Fields', :type => 'reset', class: "form-fields" %>
+
+  <%= f.submit class: "form-fields", class: "submit-button" %>
+
+  <%end%>
+</main>
