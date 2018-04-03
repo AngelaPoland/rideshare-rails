@@ -1,2 +1,7 @@
-<h1>Trips#index</h1>
-<p>Find me in app/views/trips/index.html.erb</p>
+<h1>Trips</h1>
+
+<% @trips.each do |trip| %>
+  <%=trip.driver.name%> drove <%= trip.passenger.name %>
+  on <%= trip.date%>
+  <br>
+<%end%>

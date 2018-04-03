@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
+  root 'trips#index'
+
   resources :trips
   resources :drivers
   resources :passengers
 
-
-  root 'trips#index'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
-# 
+#
 # Prefix Verb   URI Pattern                    Controller#Action
 #         trips GET    /trips(.:format)               trips#index
 #               POST   /trips(.:format)               trips#create
