@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'trips#index'
+  get '/passengers/:id', to: 'passengers#show', as: 'passenger'
 
   resources :trips
   resources :drivers

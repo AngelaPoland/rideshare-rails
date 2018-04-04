@@ -8,12 +8,24 @@ class PassengersController < ApplicationController
   end
 
   def show
+    id = params[:id]
+    @passenger = Passenger.find(id)
   end
 
   def edit
   end
 
   def create
+    passenger = Passenger.new
+    passenger.name = params[:passenger][:name]
+    passenger.phone_num = params[:passenger][:phone_num]
+
+    if passenger.save # == true - it worked!
+      id = passenger.id
+      redirect_to passenger_path(id)
+    else
+      render :new
+    end
   end
 
   def update
