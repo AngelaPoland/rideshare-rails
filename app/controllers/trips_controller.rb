@@ -11,6 +11,7 @@ class TripsController < ApplicationController
   end
 
   def edit
+    @trips = Trip.find_by(id: params[:id])
   end
 
   def create
