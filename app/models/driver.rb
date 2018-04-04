@@ -1,6 +1,14 @@
 class Driver < ApplicationRecord
   has_many :trips
 
+  # where can I put Validations?
+  # anywhere within in the Driver class
+
+  validates :vin, :name, presence: true
+
+  # add as an extra later
+  # validates :vin, uniqueness: true
+
   #any method in model can be called on a specific instance of that class
   def earnings
     total = 0
