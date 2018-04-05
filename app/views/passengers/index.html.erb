@@ -2,9 +2,9 @@
 
 <% @passengers.each do |passenger| %>
   <%= link_to passenger.name, passenger_path(passenger[:id]) %>
-  <%= button_to "Edit Passenger", edit_passenger_path,
+  <%= button_to "Edit Passenger", edit_passenger_path(passenger.id),
   method: :get, data: { confirm: "Are you sure?" } %>
-  <%= button_to (@passenger.deactivated) ? "Activate Account" : "Deactivate Passenger Account", passenger_deactivated_path(@passenger.id),
+  <%= button_to (passenger.deactivated) ? "Activate Account" : "Deactivate Passenger Account", passenger_deactivated_path(passenger.id),
   method: :p, data: { confirm: "Are you sure?" } %>
 
   <br>
