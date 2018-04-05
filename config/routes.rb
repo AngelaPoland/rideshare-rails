@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     post('deactivated')
     resources :trips, only: [:create]
   end
+#chris in class also added :new to the above
+
 
   # post('/drivers/:driver_id/deactivated', {to: 'drivers#deactivated', as: 'deactivated_driver'})
   # post('/passengers/:passenger_id/deactivated', {to: 'passengers#deactivated', as: 'deactivated_passenger'})

@@ -5,4 +5,16 @@
   <p>Name: <%= @driver.name%> </p>
   <p>Vin: <%= @driver.vin %></p>
 
+  <ul class="edit-options">
+    <li>
+      <%= button_to "Edit Driver", edit_driver_path,
+      method: :get, data: { confirm: "Are you sure?" } %>
+    </li>
+    <li>
+      <%= button_to (@driver.deactivated.nil?) ? "Deactivate Driver Account" : "Activate Account", driver_deactivated_path(@driver.id),
+      method: :patch, data: { confirm: "Are you sure?" } %>
+    </li>
+
+  </ul>
+
 </section>
