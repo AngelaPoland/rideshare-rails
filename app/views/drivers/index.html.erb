@@ -3,5 +3,9 @@
 
 <% @drivers.each do |driver| %>
   <%= link_to driver.name, driver_path(driver[:id]) %>
+  <%= button_to "Edit Driver", edit_driver_path(driver.id),
+  method: :get, data: { confirm: "Are you sure?" } %>
+   <%= button_to (driver.deactivated.nil?) ? "Deactivate Driver Account" : "Activate Account", driver_deactivated_path(driver.id),
+  method: :patch, data: { confirm: "Are you sure?" } %>
   <br>
 <%end%>
