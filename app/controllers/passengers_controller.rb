@@ -30,6 +30,14 @@ class PassengersController < ApplicationController
   end
 
   def update
+    passenger = Passenger.find_by(id: params[:id])
+    passenger.name = params[:passenger][:name]
+    passenger.phone_num = params[:passenger][:phone_num]
+    if passenger.save
+      redirect_to passenger_path
+    else
+      render :edit
+    end
   end
 
   def destroy
