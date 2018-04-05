@@ -1,5 +1,19 @@
 <h2><%= page_title %></h2>
 
+
+<% if @driver.errors.any? %>
+   <div id="error_explanation">
+     <h2><%= pluralize(@driver.errors.count, "error") %> prohibited this driver from being saved:</h2>
+
+     <ul>
+     <% @driverer.errors.full_messages.each do |msg| %>
+       <li><%= msg %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+
 <main class="form">
   <%= form_for @driver do |f| %>
 

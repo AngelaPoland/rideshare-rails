@@ -17,12 +17,12 @@ class PassengersController < ApplicationController
   end
 
   def create
-    passenger = Passenger.new
-    passenger.name = params[:passenger][:name]
-    passenger.phone_num = params[:passenger][:phone_num]
+    @passenger = Passenger.new
+    @passenger.name = params[:passenger][:name]
+    @passenger.phone_num = params[:passenger][:phone_num]
 
-    if passenger.save # == true - it worked!
-      id = passenger.id
+    if @passenger.save # == true - it worked!
+      id = @passenger.id
       redirect_to passenger_path(id)
     else
       render :new
