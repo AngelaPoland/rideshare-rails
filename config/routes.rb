@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'trips#index'
 
 
-  resources :trips, except: [:new, :create, :delete]
+  resources :trips, except: [:new, :create, :destroy]
 
 
   resources :drivers, except: [:destroy] do

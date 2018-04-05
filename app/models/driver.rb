@@ -13,4 +13,13 @@ class Driver < ApplicationRecord
     return total
   end
 
+  def self.available_drivers
+    Driver.all.each do |driver|
+      if !driver.deactivated && #status is available
+        available_drivers << driver
+      end
+    end
+    return available_drivers
+  end
+
 end
