@@ -42,4 +42,19 @@ class PassengersController < ApplicationController
 
   def destroy
   end
+
+  def deactivate
+    @passenger = Passenger.find(params[:passenger_id] || params[:id])
+    if @passenger.deactivated == false
+      @passenger.deactivated = true
+    else
+      @passenger.deactivated = false
+    end
+    @passenger.save
+    # @passenger.update(deactivated: true)  <== this is same as above but without ability to switch between activated and deactivated - lets talk about which we want to do.
+
+    redirect_to passenger_path
+  end
+
+
 end

@@ -2,11 +2,22 @@ Rails.application.routes.draw do
   root 'trips#index'
   # get '/passengers/:id', to: 'passengers#show', as: 'passenger'
 
-  resources :trips
-  resources :drivers
-  resources :passengers
+  resources :trips, except: [:create]
+  # resources :drivers
+  # resources :passengers
 
-  #get '/passengers/:id', to: 'passengers#show', as: 'passenger'
+  resources :drivers do
+    post('deactivated')
+  end
+
+  resources :passengers do
+    post('deactivated')
+    resources :trips, only: [:create]
+  end
+
+  # post('/drivers/:driver_id/deactivated', {to: 'drivers#deactivated', as: 'deactivated_driver'})
+  # post('/passengers/:passenger_id/deactivated', {to: 'passengers#deactivated', as: 'deactivated_passenger'})
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

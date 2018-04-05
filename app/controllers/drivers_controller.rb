@@ -42,4 +42,19 @@ class DriversController < ApplicationController
 
   def destroy
   end
+
+  def deactivate
+    @driver = Driver.find(params[:driver_id] || params[:id])
+    if @driver.deactivated == false
+      @driver.deactivated = true
+    else
+      @driver.deactivated = false
+    end
+    @driver.save
+    # @driver.update(deactivated: true)  <== this is same as above but without ability to switch between activated and deactivated - lets talk about which we want to do.
+
+    redirect_to driver_path
+  end
+
+
 end
