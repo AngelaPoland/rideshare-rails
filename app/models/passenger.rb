@@ -4,8 +4,14 @@ class Passenger < ApplicationRecord
   validates :name, :phone_num, presence: true
 
 
-  def deactivated?
-    return self.deactivated
+def total_paid
+  total = 0
+  self.trips.each do |trip|
+     total += trip.cost/100.00
   end
+  return total
+end
+
+
 
 end
