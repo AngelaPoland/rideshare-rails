@@ -34,7 +34,7 @@ class DriversController < ApplicationController
     driver.name = params[:driver][:name]
     driver.vin = params[:driver][:vin]
     if driver.save
-      redirect_to driver_path
+      redirect_to driver_path(driver.id)
     else
       render :edit
     end
@@ -43,9 +43,10 @@ class DriversController < ApplicationController
   def destroy
   end
 
-  def deactivate
+  def deactivated
+
     @driver = Driver.find(params[:driver_id] || params[:id])
-    if @driver.deactivated == false
+    if !@driver.deactivated
       @driver.deactivated = true
     else
       @driver.deactivated = false
@@ -53,7 +54,7 @@ class DriversController < ApplicationController
     @driver.save
     # @driver.update(deactivated: true)  <== this is same as above but without ability to switch between activated and deactivated - lets talk about which we want to do.
 
-    redirect_to driver_path
+    redirect_to driver_path(@driver.id)
   end
 
 
