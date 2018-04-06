@@ -24,7 +24,7 @@ class TripsController < ApplicationController
       @trip.passenger = Passenger.find(id)  ##### whyyyyyyyy can't I find passenger by its id?!
       @trip.driver = Driver.all.sample
       @trip.rating = params[:rating]
-      @trip.cost = rand(5..100)
+      @trip.cost = rand(100..1000)
       @trip.date = Date.today
 
 
