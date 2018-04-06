@@ -21,9 +21,9 @@ class TripsController < ApplicationController
     # if params[:passenger_id]
       @trip = Trip.new
       @trip.passenger = Passenger.find_by(id: params[:passenger_id])
-      @trip.driver = Driver.all.sample #this needs to change to available_driver method in driver model eventually
+      @trip.driver = Driver.all.sample #this needs to change to available_driver method in driver model eventually but its not working for now.
       # Trip.available_driver ?
-      @trip.rating = params[:rating]
+      @trip.rating = params[:trip][:rating]
       @trip.cost = rand(100..1000)
       @trip.date = Date.today
 
