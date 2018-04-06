@@ -6,10 +6,15 @@
   <p>Phone Number: <%= @passenger.phone_num%></p>
   <p>Total Paid: <%= @passenger.total_paid%></p>
 
+  <div class="request-trip">
+    <%= button_to "Request Trip", edit_trip_path,
+    method: :get, data: { confirm: "Are you sure?" } %>
+  </div>
+
   <ul class="edit-options">
     <li>
       <%= button_to "Edit Passenger", edit_passenger_path,
-      method: :get, data: { confirm: "Are you sure?" } %>
+      method: :get %>
     </li>
     <li>
       <%= button_to (@passenger.deactivated) ? "Activate Account" : "Deactivate Passenger Account", passenger_deactivated_path(@passenger.id),

@@ -10,7 +10,7 @@
   <ul class="edit-options">
     <li>
       <%= button_to "Edit Driver", edit_driver_path,
-      method: :get, data: { confirm: "Are you sure?" } %>
+      method: :get %>
     </li>
     <li>
       <%= button_to (@driver.deactivated) ? "Activate Account" : "Deactivate Driver Account", driver_path(@driver.id), method: :p, data: { confirm: "Are you sure?" } %>

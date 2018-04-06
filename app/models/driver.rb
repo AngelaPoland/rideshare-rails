@@ -15,7 +15,7 @@ class Driver < ApplicationRecord
 
   def self.available_drivers
     Driver.all.each do |driver|
-      if !driver.deactivated && #status is available
+      if !driver.deactivated && driver.available
         available_drivers << driver
       end
     end
