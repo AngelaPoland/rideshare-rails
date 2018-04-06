@@ -28,7 +28,8 @@
 
   <% @passenger.trips.each do |trip| %>
 
-  Date: <%=trip.date%>  |   Driver:  <%=trip.driver.name %>  |   Paid: $<%=trip.cost/100.00%>  | Rating: <%= trip.rating %>
+    <%= link_to "Trip Details", trip_path(trip[:id]) %> | Date: <%=trip.date%>  |   Driver:  <%=link_to trip.driver.name, driver_path(trip.driver[:id]) %>  |   Paid: $<%=trip.cost/100.00%>  | Rating: <%= trip.rating %>
+
   <br>
   <% end %>
 

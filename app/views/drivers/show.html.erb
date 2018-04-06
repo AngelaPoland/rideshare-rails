@@ -19,7 +19,7 @@
 
   <% @driver.trips.each do |trip| %>
 
-  Date: <%=trip.date%>  |   Passenger:  <%=trip.passenger.name %>  |   Earned: $<%=(((trip.cost/100.00) - 1.65) * 0.8).round(2)%>  | Rating: <%= trip.rating %>
+  <%= link_to "Trip Details", trip_path(trip[:id]) %> Date: <%=trip.date%>  |   Passenger: <%= link_to trip.passenger.name, passenger_path(trip.passenger[:id]) %>  |   Earned: $<%=(((trip.cost/100.00) - 1.65) * 0.8).round(2)%>  | Rating: <%= trip.rating %> 
   <br>
   <% end %>
 
