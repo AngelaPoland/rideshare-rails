@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :trips, only: [:new, :create]
   end
 
-  resources :trips
+  resources :trips, except: [:new, :create]
 
 
 

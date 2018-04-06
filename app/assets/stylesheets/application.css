@@ -2,6 +2,7 @@ nav {
   border-bottom-style: solid;
   border-bottom-color: #B8059A;
   border-bottom-width: thin;
+
 }
 
 nav ul {
@@ -17,6 +18,10 @@ nav ul {
   padding-left: 10px;
   padding-right: 10px;
   margin-left: 20px;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 20%;
+  background-color: #BFFA49;
 }
 
 
