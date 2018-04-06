@@ -7,8 +7,8 @@
   <p>Total Paid: <%= @passenger.total_paid%></p>
 
   <div class="request-trip">
-    <%= button_to "Request Trip", edit_trip_path,
-    method: :get, data: { confirm: "Are you sure?" } %>
+    <%= button_to "Request Trip", new_passenger_trip_path(params[:id]),
+    method: :get %>
   </div>
 
   <ul class="edit-options">

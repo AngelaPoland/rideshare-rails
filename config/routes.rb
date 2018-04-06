@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   root 'trips#index'
 
-
-  resources :trips, except: [:new, :create, :destroy]
-
-
   resources :drivers, except: [:destroy] do
     post('deactivated')
   end
@@ -13,7 +9,9 @@ Rails.application.routes.draw do
     post('deactivated')
     resources :trips, only: [:new, :create]
   end
-#chris in class also added :new to the above
+
+  resources :trips
+
 
 
   #post('/drivers/:driver_id/deactivated', {to: 'drivers#deactivated', as: 'deactivated_driver'})

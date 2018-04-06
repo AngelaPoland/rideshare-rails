@@ -1,30 +1,17 @@
 <h2><%= page_title %></h2>
 
 
-<% if @passenger.errors.any? %>
-   <div id="error_explanation">
-     <h2><%= pluralize(@passenger.errors.count, "error") %> prohibited this passenger from being saved:</h2>
 
-     <ul>
-     <% @passenger.errors.full_messages.each do |msg| %>
-       <li><%= msg %></li>
-     <% end %>
-     </ul>
-   </div>
- <% end %>
 
 <main class="form">
-  <%= form_for @passenger do |f| %>
+  <%= form_for @trip do |f| %>
 
   <div class="form-fields">
-    <%= f.label "Name: "   %>
-    <%= f.text_field :name %>
+    <%= f.label "Rating: "   %>
+    <%= f.text_field :rating %>
   </div>
 
-  <div class="form-fields">
-    <%= f.label "Phone Number: " %>
-    <%= f.text_field :phone_num %>
-  </div>
+
 </br>
 
  <%= button_tag 'Clear Fields', :type => 'reset', class: "form-fields" %>
