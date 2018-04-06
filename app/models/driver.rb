@@ -13,15 +13,15 @@ class Driver < ApplicationRecord
     return total
   end
 
-  def self.available_driver
-    # available_drivers = []
-    # Driver.all.each do |driver|
-    #   if !driver.deactivated && driver.available
-    #     available_drivers << driver
-    #   end
-    # end
-    # return available_drivers.sample
-    Driver.all.sample
+  def self.available_driver    #this isn't working correctly
+    available_drivers = []
+    Driver.all.each do |driver|
+      if !driver.deactivated && driver.available
+        available_drivers << driver
+      end
+    end
+    available driver = available_drivers.sample
+    return available_driver
   end
 
   def average_rating

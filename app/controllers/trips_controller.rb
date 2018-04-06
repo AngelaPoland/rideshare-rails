@@ -20,9 +20,14 @@ class TripsController < ApplicationController
   def create
     # if params[:passenger_id]
       @trip = Trip.new
-      id = params[:passenger_id]
-      @trip.passenger = Passenger.find(id)  ##### whyyyyyyyy can't I find passenger by its id?!
-      @trip.driver = Driver.all.sample
+      @trip.passenger = Passenger.find_by(id: params[:passenger_id])
+      ##### whyyyyyyyy can't I find passenger by its id?!
+      #have also tried:
+      #Passenger.find_by(id: params[:id])
+      #Passenger.find(:passenger_id)
+      #setting id = param[:passenger_id] then Passenger.find(id)
+      @trip.driver = Driver.all.sample #this needs to change to available_driver method in driver model eventually
+      # Trip.available_driver ?
       @trip.rating = params[:rating]
       @trip.cost = rand(100..1000)
       @trip.date = Date.today
