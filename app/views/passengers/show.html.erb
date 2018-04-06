@@ -18,7 +18,7 @@
     </li>
     <li>
       <%= button_to (@passenger.deactivated) ? "Activate Account" : "Deactivate Passenger Account", passenger_deactivated_path(@passenger.id),
-      method: :p, data: { confirm: "Are you sure?" } %>
+      method: :post, data: { confirm: "Are you sure?" } %>
     </li>
 
   </ul>
