@@ -22,4 +22,15 @@ class Driver < ApplicationRecord
     return available_drivers
   end
 
+  def average_rating
+    num_of_ratings = 0
+    total = 0.0
+    self.trips.each do |trip|
+      total +=trip.rating
+      num_of_ratings += 1
+    end
+    average = total/num_of_ratings
+    return average
+  end
+
 end
