@@ -23,4 +23,15 @@
 
   </ul>
 
+  <br>
+
+
+  <% @passenger.trips.each do |trip| %>
+
+  Date: <%=trip.date%>  |   Driver:  <%=trip.driver.name %>  |   Paid: $<%=trip.cost/100.00%>  | Rating: <%= trip.rating %>
+  <br>
+  <% end %>
+
+
+
 </section>
