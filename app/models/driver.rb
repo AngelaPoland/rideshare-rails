@@ -31,7 +31,7 @@ class Driver < ApplicationRecord
       total +=trip.rating
       num_of_ratings += 1
     end
-    average = total/num_of_ratings
+    average = (total/num_of_ratings)
     return average
   end
 
