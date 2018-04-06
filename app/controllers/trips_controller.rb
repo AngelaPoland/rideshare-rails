@@ -20,7 +20,8 @@ class TripsController < ApplicationController
   def create
     # if params[:passenger_id]
       @trip = Trip.new
-      @trip.passenger = Passenger.all.sample #Passenger.find_by(id: params[:passenger_id])
+      id = params[:passenger_id]
+      @trip.passenger = Passenger.find(id)
       @trip.driver = Driver.all.sample
       @trip.rating = params[:rating]
       @trip.cost = rand(5..100)
@@ -40,4 +41,12 @@ class TripsController < ApplicationController
 
   def destroy
   end
+
+  private
+
+  def trip_params
+     return params.require(:trip).permit(:driver, :passenger, :rating, :cost, :date)
+  end
+
+
 end
