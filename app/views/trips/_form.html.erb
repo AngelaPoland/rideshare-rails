@@ -4,7 +4,7 @@
 
 
 <main class="form">
-  <%= form_for @trip do |f| %>
+  <%= form_for @trip, url: passenger_trips_path(params[:passenger_id])  do |f| %>
 
   <div class="form-fields">
     <%= f.label "Rating: "   %>
