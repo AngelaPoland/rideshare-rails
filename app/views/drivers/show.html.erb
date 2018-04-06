@@ -15,7 +15,13 @@
     <li>
       <%= button_to (@driver.deactivated) ? "Activate Account" : "Deactivate Driver Account", driver_path(@driver.id), method: :p, data: { confirm: "Are you sure?" } %>
     </li>
-
   </ul>
+
+  <% @driver.trips.each do |trip| %>
+
+  Date: <%=trip.date%>  |   Passenger:  <%=trip.passenger.name %>  |   Earned: $<%=(((trip.cost/100.00) - 1.65) * 0.8).round(2)%>  | Rating: <%= trip.rating %>
+  <br>
+  <% end %>
+
 
 </section>

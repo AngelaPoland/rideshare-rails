@@ -21,7 +21,7 @@ class TripsController < ApplicationController
     # if params[:passenger_id]
       @trip = Trip.new
       id = params[:passenger_id]
-      @trip.passenger = Passenger.find(id)
+      @trip.passenger = Passenger.find(id)  ##### whyyyyyyyy can't I find passenger by its id?!
       @trip.driver = Driver.all.sample
       @trip.rating = params[:rating]
       @trip.cost = rand(5..100)
