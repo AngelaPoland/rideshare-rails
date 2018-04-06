@@ -1,10 +1,10 @@
-<h2>Passengers</h2>
+<h2>Passenger</h2>
 
 <section >
 
   <p>Name: <%= @passenger.name%> </p>
   <p>Phone Number: <%= @passenger.phone_num%></p>
-  <p>Total Paid: <%= @passenger.total_paid%></p>
+  <p>Total Paid: $ <%= (@passenger.total_paid).round(2)%></p>
 
   <div class="request-trip">
     <%= button_to "Request Trip", new_passenger_trip_path(params[:id]),

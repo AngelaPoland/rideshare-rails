@@ -2,9 +2,9 @@
 
 <p>
 <ul>
-  <li>Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver[:id]) %>></li>
+  <li>Driver: <%= link_to @trip.driver.name, driver_path(@trip.driver[:id]) %></li>
   <li>Passenger: <%= link_to @trip.passenger.name, passenger_path(@trip.passenger[:id]) %> </li>
-  <li>Cost: <%=(@trip.cost/100.0)%></li>
-  <li>Trip Rating: <%=@trip.rating%></li>
+  <li>Cost: $ <%=(@trip.cost/100.0)%></li>
+  <li>Trip Rating: ✨ <%=@trip.rating%></li>
 </ul>
 </p>
